@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://spiked ship 3. small.blue_.PNG" type="Texture" id=2]
+[ext_resource path="res://wall.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 62.8013
+
+[node name="world_root" type="Node2D"]
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 379, 191 )
+rotation = 0.63879
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 1 )
+move_speed = 200
+
+[node name="Sprite" type="Sprite" parent="player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource( 1 )
+
+[node name="wall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 127, 138 )
+
+[node name="wall2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 342, 362 )
+scale = Vector2( 4, 1 )
+
+[node name="wall3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 697, 144 )
