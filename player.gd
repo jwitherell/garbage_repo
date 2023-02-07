@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+# This is a new comment
 
 # Declare member variables here. Examples:
 # var a = 2
